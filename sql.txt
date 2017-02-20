@@ -1,0 +1,28 @@
+CREATE DATABASE `menu` CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+CREATE TABLE menu (id int not null primary key auto_increment, name varchar(50));
+CREATE TABLE parents (id int not null primary key auto_increment, menu_id int, parent_id int);
+
+INSERT INTO menu(id, name) values(1, 'element1');
+INSERT INTO menu(id, name) values(2, 'element2');
+INSERT INTO menu(id, name) values(3, 'element3');
+INSERT INTO menu(id, name) values(4, 'element4');
+INSERT INTO menu(id, name) values(5, 'element5');
+INSERT INTO menu(id, name) values(6, 'element6');
+INSERT INTO menu(id, name) values(7, 'element7');
+INSERT INTO menu(id, name) values(8, 'element8');
+
+INSERT INTO parents(menu_id, parent_id) values(2, 1);
+INSERT INTO parents(menu_id, parent_id) values(3, 1);
+
+INSERT INTO parents(menu_id, parent_id) values(4, 3);
+INSERT INTO parents(menu_id, parent_id) values(5, 3);
+
+INSERT INTO parents(menu_id, parent_id) values(6, 1);
+
+INSERT INTO parents(menu_id, parent_id) values(4, 6);
+
+INSERT INTO parents(menu_id, parent_id) values(7, 1);
+INSERT INTO parents(menu_id, parent_id) values(8, 1);
+
+INSERT INTO parents(menu_id, parent_id) values(3, 8);
